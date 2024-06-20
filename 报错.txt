@@ -1,0 +1,5 @@
+报错：[06/13/2024-11:18:25] [E] [TRT] 1: [runtime.cpp::nvinfer1::Runtime::parsePlan::314] Error Code 1: Serialization 
+(Serialization assertion plan->header.magicTag == rt::kPLAN_MAGIC_TAG failed.)
+原因：不同设备engine需要另外生成
+
+vs中没有添加头文件直接编译反而成功了
