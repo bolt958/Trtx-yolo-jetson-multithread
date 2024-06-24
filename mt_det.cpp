@@ -53,7 +53,7 @@ static const int OUTPUT_SIZE = Yolo::MAX_OUTPUT_BBOX_COUNT * sizeof(Yolo::Detect
 const char* INPUT_BLOB_NAME = "data";
 const char* OUTPUT_BLOB_NAME = "prob";
 static Logger gLogger;
-//std::string class_names[] = {"AUV_1", "AUV_2", "HOV_1","HOV_2","UUV_unknown","test"};
+
 
 class MTDet
 {
