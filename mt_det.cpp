@@ -98,7 +98,7 @@ public:
 
         if (input_video_path == "rtsp")
         {
-            auto rtsp = "rtsp://192.168.0.210:8557/PSIA/Streaming/channels/2?videoCodecType=H.264";
+            auto rtsp = "rtsp://xxx";
             std::cout << "input source : rtsp " << std::endl;
             cap = cv::VideoCapture(rtsp, cv::CAP_FFMPEG);
         }
@@ -235,7 +235,7 @@ public:
         std::time_t now_1 = std::chrono::system_clock::to_time_t(start_now);
         std::tm* now_tm = std::localtime(&now_1);
         std::stringstream sss;
-        sss << std::put_time(now_tm, "G:\\Desktop_temp\\yolov5-tensorrtx-VideoCapture-master\\results\\videos\\%Y_%m_%d_%H_%M.avi");
+        sss << std::put_time(now_tm, "xxx\yolov5-tensorrtx-VideoCapture-master\\results\\videos\\%Y_%m_%d_%H_%M.avi");
         std::string output_video_name = sss.str();
         cv::VideoWriter writer(output_video_name, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'), video_fps_, frameSize_);
 
@@ -267,7 +267,7 @@ public:
                 std::stringstream label_temp;
                 label_temp << std::put_time(std::localtime(&in_time_t), "%Y_%m_%d_%H_%M_%S");
                 std::string timestamp = label_temp.str() + "_" + std::to_string(framecounter);
-                std::string timestamped_label_name = "G:\\Desktop_temp\\yolov5-tensorrtx-VideoCapture-master\\results\\time_labels\\" + timestamp + ".txt";
+                std::string timestamped_label_name = "xxx\yolov5-tensorrtx-VideoCapture-master\\results\\time_labels\\" + timestamp + ".txt";
                 std::ofstream timestampedOutFile(timestamped_label_name);
                 if (!timestampedOutFile.is_open()) {
                     std::cerr << "Error: Unable to open file: " << timestamped_label_name << std::endl;
@@ -310,13 +310,14 @@ public:
         
             //cv::namedWindow("frame", cv::WINDOW_FREERATIO);
             //cv::imshow("frame" , item.frame);
+            //这一部分有问题，没法正常显示
             writer.write(item.frame);
         }
     }
 
 
 private:
-    std::string input_video_path = "G:\\Desktop_temp\\yolov5-tensorrtx-VideoCapture-master\\videos\\sample.mp4"; 
+    std::string input_video_path = "xxx\\yolov5-tensorrtx-VideoCapture-master\\videos\\sample.mp4"; 
     cv::VideoCapture cap;                 
     double video_fps_;                     
     cv::Size frameSize_;
