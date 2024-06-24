@@ -3,3 +3,5 @@
 线程1：视频文件输入or RTSP输入源<br>
 线程2：预处理、推理、NMS<br>
 线程3：渲染、保存、显示（其他应用...）<br>
+
+usage:sudo ./mtdet xxx.engine 输入源
