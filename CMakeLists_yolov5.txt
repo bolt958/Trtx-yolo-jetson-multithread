@@ -4,9 +4,9 @@ project(yolov5)
  
 #change to your own path
 ##################################################
-set(OpenCV_DIR "D:\\OpenCv\\opencv\\build") #2
-set(TRT_DIR "D:\\Tensorrt\\TensorRT-8.6.1.6") #3
-set(Dirent_INCLUDE_DIRS "D:\\dirent\\dirent-master\\include") #10
+set(OpenCV_DIR "xxx\\opencv\\build") #2
+set(TRT_DIR "xxx\\TensorRT-8.6.1.6") #3
+set(Dirent_INCLUDE_DIRS "xxx\\dirent-master\\include") #10
 ##################################################
  
 add_definitions(-std=c++11)
