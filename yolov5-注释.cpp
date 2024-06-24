@@ -320,7 +320,7 @@ int main(int argc, char** argv) {
     bool is_p6 = false;
     float gd = 0.0f, gw = 0.0f;
     //std::string img_dir;
-    //std::string class_names[] = {"AUV_1", "AUV_2", "HOV_1","HOV_2","UUV_unknown","test"};
+ 
 
     std::string parse[10];
     parse[0] = "./yolov5"; 
