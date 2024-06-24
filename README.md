@@ -4,4 +4,4 @@
 线程2：预处理、推理、NMS<br>
 线程3：渲染、保存、显示（其他应用...）<br>
 
-usage:sudo ./mtdet xxx.engine 输入源
+usage : sudo   ./mtdet   xxx.engine   输入源
