@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::string rtsp_url = "rtsp://192.168.0.210:8557/PSIA/Streaming/channels/2?videoCodecType=H.264"; 
+    std::string rtsp_url = "rtsp:/"; 
     std::string pipeline = "rtspsrc location=" + rtsp_url + " ! rtph264depay ! h264parse ! omxh264dec ! nvvidconv ! video/x-raw, width=960, height=540, format=BGRx ! videoconvert ! appsink sync=false";
     std::cout << pipeline << std::endl;
 
