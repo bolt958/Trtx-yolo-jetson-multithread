@@ -20,7 +20,7 @@
 #define PRINT_ALL_TIME 1
 
 const int BUFFER_SIZE = 16;//win        30fsp vs 300fps --- 10buffersize at least
-//const int BUFFER_SIZE = 20;//linux
+//const int BUFFER_SIZE = 20;//nano
 const int show_buffer = 20;
 
 
