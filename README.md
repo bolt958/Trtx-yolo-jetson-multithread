@@ -7,7 +7,7 @@
 usage : sudo   ./mtdet   xxx.engine   输入源
 
 
-6-26commit：<br>
+6-26   commit：<br>
 1.新开线程解决无法实时显示检测视频的问题<br>
 2.解决nano上无法保存检测视频的问题<br>
 3.解决FPS计算错误问题并优化各种打印信息<br>
