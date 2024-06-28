@@ -276,6 +276,8 @@ public:
 
         bufferItem item;
         int framecounter = 0;
+        auto start_time = std::chrono::system_clock::now();
+        std::string fps_allprocess = "null";
         while (true)
         {
             if (file_processed_done && stage_2_buffer.empty())
@@ -329,6 +331,17 @@ public:
             // stream_fps << std::fixed << std::setprecision(2) << 1000.f / process_time_all;
             // std::string fps_allprocess = stream_fps.str();
             // cv::putText(item.frame, "FPS: " + fps_allprocess, cv::Point(item.frame.cols * 0.02, item.frame.rows * 0.05), cv::FONT_HERSHEY_PLAIN, 2, cv::Scalar(0, 0, 255), 2, 8);
+
+            if((counter+1) % 30 == 0){
+                std::stringstream stream_fps;
+                auto frame30_cost_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_3 - start_time).count();
+                stream_fps << std::fixed << std::setprecision(2) << 1000.f / (frame30_cost_time / 30.f);
+                fps_allprocess = stream_fps.str();
+                std::cout << "FPS: " << fps_allprocess <<std::endl;
+                start_time = std::chrono::system_clock::now();
+            }
+
+            cv::putText(item.frame, "FPS: " + fps_allprocess, cv::Point(item.frame.cols * 0.3, item.frame.rows * 0.05), cv::FONT_HERSHEY_PLAIN, 2, cv::Scalar(0, 0, 255), 2, 8);
             
 #if PRINT_ALL_TIME
             std::cout << "Framecounter: " << counter << std::endl;
