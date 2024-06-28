@@ -21,7 +21,7 @@
 
 const int BUFFER_SIZE = 16;//win        30fsp vs 300fps --- 10buffersize at least
 //const int BUFFER_SIZE = 20;//nano
-const int show_buffer = 20;
+const int show_buffer = 50;// to be large enough
 
 
 struct bufferItem
@@ -325,16 +325,16 @@ public:
             postprocess_time.push_back(std::chrono::duration_cast<std::chrono::milliseconds>(end_3 - start_3).count());
             auto process_time_all = rtsp_pull_time[counter] + detect_time[counter] + postprocess_time[counter];
 
-            std::stringstream stream_fps;
-            stream_fps << std::fixed << std::setprecision(2) << 1000.f / process_time_all;
-            std::string fps_allprocess = stream_fps.str();
-            cv::putText(item.frame, "FPS: " + fps_allprocess, cv::Point(item.frame.cols * 0.02, item.frame.rows * 0.05), cv::FONT_HERSHEY_PLAIN, 2, cv::Scalar(0, 0, 255), 2, 8);
+            // std::stringstream stream_fps;
+            // stream_fps << std::fixed << std::setprecision(2) << 1000.f / process_time_all;
+            // std::string fps_allprocess = stream_fps.str();
+            // cv::putText(item.frame, "FPS: " + fps_allprocess, cv::Point(item.frame.cols * 0.02, item.frame.rows * 0.05), cv::FONT_HERSHEY_PLAIN, 2, cv::Scalar(0, 0, 255), 2, 8);
             
 #if PRINT_ALL_TIME
             std::cout << "Framecounter: " << counter << std::endl;
             std::cout << "process_time_all:" << process_time_all << "ms" << "  ---  "<<"rtsp_pull_time: "<<rtsp_pull_time[counter] << "ms -- "<<"detect_time: "<<detect_time[counter]<<"ms -- "<<"postprocess_time: "<<postprocess_time[counter]<<"ms"<<std::endl;
             std::cout << "detect_time_detail: " << "pre:" <<preprocess_time[counter] <<"ms --- " <<"infer: " <<inference_time[counter]<<"ms --- "<<"nms: "<<nms_time[counter]<<"ms"<<std::endl;
-            std::cout << "FPS: " << fps_allprocess <<"\n"<< std::endl;
+            // std::cout << "FPS: " << fps_allprocess <<"\n"<< std::endl;
 #endif
         
             writer.write(item.frame);
